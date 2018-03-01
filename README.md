@@ -51,7 +51,11 @@ Configuration
 The configuration of dwm is done by creating a custom config.h
 and (re)compiling the source code. The modification to config.h were:
 
-1) topbar variable set to 0, which means the menu bar at the bottom;
+1) topbar variable set to 0, which means that the menu bar is now at the bottom;
 2) font and dmenufont changed to Inconsolata;
-3) Solarized color scheme added;
+3) Solarized color scheme added. Here the dwm.c file was modified so that the status bar now has the SchemeSel colors as defined in config.h;
 4) No special rules for apps like Firefox and Gimp;
+5) mfact set to 0.5. Now master and slave area divide the screen in exactly half;
+6) resizehints was set to 0. This is a workaroud to prevent terminal emulator windows to have useless gaps in tile stack mode of slave area;
+7) MODKEY altered to MOD4Mask (windows key in the keyboard). Now win key instead of alt is used as the main key modifier;
+8) Fibonacci patch was added. The layout dwindle was set as the default one and the hotkeys MODKEY+s and MODKEY+\ were attributed to the spiral and dwindle layout, respectevely;
