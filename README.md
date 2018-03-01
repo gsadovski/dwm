@@ -1,7 +1,7 @@
+
 This is my dwm customization at the present moment.
 
-Patches:
-    fibonacci
+Add patches: 1)fibonacci.
     
 
 dwm - dynamic window manager
