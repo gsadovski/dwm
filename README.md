@@ -1,9 +1,4 @@
 
-This is my dwm customization at the present moment.
-
-Add patches: 1)fibonacci.
-    
-
 dwm - dynamic window manager
 ============================
 dwm is an extremely fast, small, and dynamic window manager for X.
@@ -54,4 +49,9 @@ like this in your .xinitrc:
 Configuration
 -------------
 The configuration of dwm is done by creating a custom config.h
-and (re)compiling the source code.
+and (re)compiling the source code. The modification to config.h were:
+
+1) topbar variable set to 0, which means the menu bar at the bottom;
+2) font and dmenufont changed to Inconsolata;
+3) Solarized color scheme added;
+4) No special rules for apps like Firefox and Gimp;
