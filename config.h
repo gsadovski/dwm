@@ -7,15 +7,30 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Inconsolata:size=10" };
 static const char dmenufont[]       = "Inconsolata:size=10";
-static const char col_gray1[]       = "#222222";
+
+/* default color scheme */
+/*static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
+*/
+
+/* solarized color scheme: from darker to lighter tones */
+static const char s_base03[]        = "#002b36"; /* dark bg tones*/
+static const char s_base02[]        = "#073642"; /* dark bg tones*/
+static const char s_base01[]        = "#586e75"; /* content tones*/
+static const char s_base00[]        = "#657b83"; /* content tones*/
+static const char s_base0[]         = "#839496"; /* content tones*/
+static const char s_base1[]         = "#93a1a1"; /* content tones*/
+static const char s_base2[]         = "#eee8d5"; /* light bg tones*/
+static const char s_base3[]         = "#fdf6e3"; /* light bg tones*/
+
 static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_cyan, col_gray1,  col_cyan  },
+ 	            /*      fg        bg     border */  	
+	[SchemeNorm] =  { s_base01, s_base03, s_base02 },
+	[SchemeSel]  = 	{ s_base1, s_base03, s_base2 },
+	
 };
 
 /* tagging */
@@ -58,9 +73,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-b","-m", dmenumon, "-fn", dmenufont, 
-"-nb", 
-col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-b","-m", dmenumon, "-fn", dmenufont, "-nb", s_base03, "-nf", s_base01, "-sb", s_base03, "-sf", s_base1, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static Key keys[] = {
