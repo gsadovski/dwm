@@ -58,4 +58,10 @@ and (re)compiling the source code. The modification to config.h were:
 5) mfact set to 0.5. Now master and slave area divide the screen in exactly half;
 6) resizehints was set to 0. This is a workaroud to prevent terminal emulator windows to have useless gaps in tile stack mode of slave area;
 7) MODKEY altered to MOD4Mask (windows key in the keyboard). Now win key instead of alt is used as the main key modifier;
-8) Fibonacci patch was added. The layout dwindle was set as the default one and the hotkeys MODKEY+s and MODKEY+\ were attributed to the spiral and dwindle layout, respectevely;
+8) Fibonacci patch was added. The layout dwindle was set as the default one and the hotkeys MODKEY+s and MODKEY+\ were attributed to the spiral and dwindle layout, respectively;
+9) combo patch added;
+10) fakefullscreen patch added;
+11) noborder patch added;
+12) fancybar patch added;
+13) movestack patch added;
+14) pertag patch added.
