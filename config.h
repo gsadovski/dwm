@@ -76,18 +76,21 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-b","-m", dmenumon, "-fn", dmenufont, "-nb", s_base03, "-nf", s_base01, "-sb", s_base03, "-sf", s_base1, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
+#include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        	function        argument */
 	{ MODKEY,                       XK_p,     	spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return, 	spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_KP_Enter,	spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      	togglebar,      {0} },
 	{ MODKEY,                       XK_j,      	focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      	focusstack,     {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_j,      	movestack,      {.i = +1 } },
+ 	{ MODKEY|ShiftMask,             XK_k,      	movestack,      {.i = -1 } },
 	{ MODKEY,                       XK_i,      	incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,     	incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      	setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      	setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_Return, 	zoom,           {0} },
+	{ MODKEY,                       XK_KP_Enter, 	zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    	view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      	killclient,     {0} },
 	{ MODKEY,                       XK_backslash,  	setlayout,      {.v = &layouts[0]} },
